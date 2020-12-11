@@ -12,79 +12,79 @@ from azure_devtools.scenario_tests import AllowLargeResponse
 
 @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2016-12-01')
 class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
-    @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
-    @ResourceGroupPreparer(name_prefix='cli_test_storage_service_endpoints')
-    @StorageAccountPreparer()
-    def test_storage_account_service_endpoints(self, resource_group, storage_account):
-        kwargs = {
-            'rg': resource_group,
-            'acc': storage_account,
-            'vnet': 'vnet1',
-            'subnet': 'subnet1'
-        }
-        self.cmd('storage account create -g {rg} -n {acc} --sku Standard_LRS --bypass Metrics --default-action Deny --https-only '
-                 .format(**kwargs),
-                 checks=[
-                     JMESPathCheck('networkRuleSet.bypass', 'Metrics'),
-                     JMESPathCheck('networkRuleSet.defaultAction', 'Deny')])
-        self.cmd('storage account update -g {rg} -n {acc} --bypass Logging --default-action Allow'.format(**kwargs),
-                 checks=[
-                     JMESPathCheck('networkRuleSet.bypass', 'Logging'),
-                     JMESPathCheck('networkRuleSet.defaultAction', 'Allow')])
-        self.cmd('storage account update -g {rg} -n {acc} --set networkRuleSet.default_action=deny'.format(**kwargs),
-                 checks=[
-                     JMESPathCheck('networkRuleSet.bypass', 'Logging'),
-                     JMESPathCheck('networkRuleSet.defaultAction', 'Deny')])
+    # @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
+    # @ResourceGroupPreparer(name_prefix='cli_test_storage_service_endpoints')
+    # @StorageAccountPreparer()
+    # def test_storage_account_service_endpoints(self, resource_group, storage_account):
+    #     kwargs = {
+    #         'rg': resource_group,
+    #         'acc': storage_account,
+    #         'vnet': 'vnet1',
+    #         'subnet': 'subnet1'
+    #     }
+    #     self.cmd('storage account create -g {rg} -n {acc} --sku Standard_LRS --bypass Metrics --default-action Deny --https-only '
+    #              .format(**kwargs),
+    #              checks=[
+    #                  JMESPathCheck('networkRuleSet.bypass', 'Metrics'),
+    #                  JMESPathCheck('networkRuleSet.defaultAction', 'Deny')])
+    #     self.cmd('storage account update -g {rg} -n {acc} --bypass Logging --default-action Allow'.format(**kwargs),
+    #              checks=[
+    #                  JMESPathCheck('networkRuleSet.bypass', 'Logging'),
+    #                  JMESPathCheck('networkRuleSet.defaultAction', 'Allow')])
+    #     self.cmd('storage account update -g {rg} -n {acc} --set networkRuleSet.default_action=deny'.format(**kwargs),
+    #              checks=[
+    #                  JMESPathCheck('networkRuleSet.bypass', 'Logging'),
+    #                  JMESPathCheck('networkRuleSet.defaultAction', 'Deny')])
 
-        self.cmd('network vnet create -g {rg} -n {vnet} --subnet-name {subnet}'.format(**kwargs))
-        self.cmd(
-            'network vnet subnet update -g {rg} --vnet-name {vnet} -n {subnet} --service-endpoints Microsoft.Storage'.format(
-                **kwargs))
+    #     self.cmd('network vnet create -g {rg} -n {vnet} --subnet-name {subnet}'.format(**kwargs))
+    #     self.cmd(
+    #         'network vnet subnet update -g {rg} --vnet-name {vnet} -n {subnet} --service-endpoints Microsoft.Storage'.format(
+    #             **kwargs))
 
-        self.cmd('storage account network-rule add -g {rg} --account-name {acc} --ip-address 25.1.2.3'.format(**kwargs))
-        self.cmd(
-            'storage account network-rule add -g {rg} --account-name {acc} --ip-address 25.2.0.0/24'.format(**kwargs))
-        self.cmd(
-            'storage account network-rule add -g {rg} --account-name {acc} --vnet-name {vnet} --subnet {subnet}'.format(
-                **kwargs))
-        self.cmd('storage account network-rule list -g {rg} --account-name {acc}'.format(**kwargs), checks=[
-            JMESPathCheck('length(ipRules)', 2),
-            JMESPathCheck('length(virtualNetworkRules)', 1)
-        ])
-        self.cmd(
-            'storage account network-rule remove -g {rg} --account-name {acc} --ip-address 25.1.2.3'.format(**kwargs))
-        self.cmd(
-            'storage account network-rule remove -g {rg} --account-name {acc} --vnet-name {vnet} --subnet {subnet}'.format(
-                **kwargs))
-        self.cmd('storage account network-rule list -g {rg} --account-name {acc}'.format(**kwargs), checks=[
-            JMESPathCheck('length(ipRules)', 1),
-            JMESPathCheck('length(virtualNetworkRules)', 0)
-        ])
+    #     self.cmd('storage account network-rule add -g {rg} --account-name {acc} --ip-address 25.1.2.3'.format(**kwargs))
+    #     self.cmd(
+    #         'storage account network-rule add -g {rg} --account-name {acc} --ip-address 25.2.0.0/24'.format(**kwargs))
+    #     self.cmd(
+    #         'storage account network-rule add -g {rg} --account-name {acc} --vnet-name {vnet} --subnet {subnet}'.format(
+    #             **kwargs))
+    #     self.cmd('storage account network-rule list -g {rg} --account-name {acc}'.format(**kwargs), checks=[
+    #         JMESPathCheck('length(ipRules)', 2),
+    #         JMESPathCheck('length(virtualNetworkRules)', 1)
+    #     ])
+    #     self.cmd(
+    #         'storage account network-rule remove -g {rg} --account-name {acc} --ip-address 25.1.2.3'.format(**kwargs))
+    #     self.cmd(
+    #         'storage account network-rule remove -g {rg} --account-name {acc} --vnet-name {vnet} --subnet {subnet}'.format(
+    #             **kwargs))
+    #     self.cmd('storage account network-rule list -g {rg} --account-name {acc}'.format(**kwargs), checks=[
+    #         JMESPathCheck('length(ipRules)', 1),
+    #         JMESPathCheck('length(virtualNetworkRules)', 0)
+    #     ])
 
-    @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
-    @ResourceGroupPreparer(location='southcentralus')
-    def test_create_storage_account_with_assigned_identity(self, resource_group):
-        name = self.create_random_name(prefix='cli', length=24)
-        cmd = 'az storage account create -n {} -g {} --sku Standard_LRS --assign-identity --https-only '.format(name, resource_group)
-        result = self.cmd(cmd).get_output_in_json()
+    # @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
+    # @ResourceGroupPreparer(location='redmond')
+    # def test_create_storage_account_with_assigned_identity(self, resource_group):
+    #     name = self.create_random_name(prefix='cli', length=24)
+    #     cmd = 'az storage account create -n {} -g {} --sku Standard_LRS --assign-identity --https-only '.format(name, resource_group)
+    #     result = self.cmd(cmd).get_output_in_json()
 
-        self.assertIn('identity', result)
-        self.assertTrue(result['identity']['principalId'])
-        self.assertTrue(result['identity']['tenantId'])
+    #     self.assertIn('identity', result)
+    #     self.assertTrue(result['identity']['principalId'])
+    #     self.assertTrue(result['identity']['tenantId'])
 
-    @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
-    @ResourceGroupPreparer(location='southcentralus')
-    def test_update_storage_account_with_assigned_identity(self, resource_group):
-        name = self.create_random_name(prefix='cli', length=24)
-        create_cmd = 'az storage account create -n {} -g {} --sku Standard_LRS --https-only '.format(name, resource_group)
-        self.cmd(create_cmd, checks=[JMESPathCheck('identity', None)])
+    # @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-06-01')
+    # @ResourceGroupPreparer(location='redmond')
+    # def test_update_storage_account_with_assigned_identity(self, resource_group):
+    #     name = self.create_random_name(prefix='cli', length=24)
+    #     create_cmd = 'az storage account create -n {} -g {} --sku Standard_LRS --https-only '.format(name, resource_group)
+    #     self.cmd(create_cmd, checks=[JMESPathCheck('identity', None)])
 
-        update_cmd = 'az storage account update -n {} -g {} --assign-identity'.format(name, resource_group)
-        result = self.cmd(update_cmd).get_output_in_json()
+    #     update_cmd = 'az storage account update -n {} -g {} --assign-identity'.format(name, resource_group)
+    #     result = self.cmd(update_cmd).get_output_in_json()
 
-        self.assertIn('identity', result)
-        self.assertTrue(result['identity']['principalId'])
-        self.assertTrue(result['identity']['tenantId'])
+    #     self.assertIn('identity', result)
+    #     self.assertTrue(result['identity']['principalId'])
+    #     self.assertTrue(result['identity']['tenantId'])
 
     # @AllowLargeResponse()
     # @ResourceGroupPreparer(parameter_name_for_location='location')
@@ -100,7 +100,7 @@ class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
     #     ])
 
     #     self.cmd('storage account list -g {}'.format(resource_group), checks=[
-    #         JMESPathCheck('[0].location', 'westus'),
+    #         JMESPathCheck('[0].location', 'redmond'),
     #         JMESPathCheck('[0].sku.name', 'Standard_LRS'),
     #         JMESPathCheck('[0].resourceGroup', resource_group)
     #     ])
@@ -138,15 +138,15 @@ class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
     #     self.cmd('storage account check-name --name {}'.format(name),
     #              checks=JMESPathCheck('nameAvailable', True))
 
-    @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-10-01')
-    @ResourceGroupPreparer(location='southcentralus')
-    def test_storage_create_default_sku(self, resource_group):
-        name = self.create_random_name(prefix='cli', length=24)
-        create_cmd = 'az storage account create -n {} -g {} --https-only '.format(name, resource_group)
-        self.cmd(create_cmd, checks=[JMESPathCheck('sku.name', 'Standard_RAGRS')])
+    #@api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2017-10-01')
+    #@ResourceGroupPreparer(location='redmond')
+    #def test_storage_create_default_sku(self, resource_group):
+    #    name = self.create_random_name(prefix='cli', length=24)
+    #    create_cmd = 'az storage account create -n {} -g {} --https-only '.format(name, resource_group)
+    #    self.cmd(create_cmd, checks=[JMESPathCheck('sku.name', 'Standard_RAGRS')])
 
-    def test_show_usage(self):
-        self.cmd('storage account show-usage -l westus', checks=JMESPathCheck('name.value', 'StorageAccounts'))
+    # def test_show_usage(self):
+    #     self.cmd('storage account show-usage -l redmond', checks=JMESPathCheck('name.value', 'StorageAccounts'))
 
     # @ResourceGroupPreparer()
     # @StorageAccountPreparer()
@@ -168,19 +168,19 @@ class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
     #         JMESPathCheck('blob.retentionPolicy.days', 1)
     #     ])
 
-    @ResourceGroupPreparer()
-    @StorageAccountPreparer()
-    def test_metrics_operations(self, resource_group, storage_account_info):
-        self.storage_cmd('storage metrics show', storage_account_info) \
-            .assert_with_checks(JMESPathCheck('file.hour.enabled', True),
-                                JMESPathCheck('file.minute.enabled', False))
+    #@ResourceGroupPreparer()
+    #@StorageAccountPreparer()
+    #def test_metrics_operations(self, resource_group, storage_account_info):
+    #    self.storage_cmd('storage metrics show', storage_account_info) \
+    #        .assert_with_checks(JMESPathCheck('file.hour.enabled', True),
+    #                            JMESPathCheck('file.minute.enabled', False))
 
-        self.storage_cmd('storage metrics update --services f --api true --hour true --minute true --retention 1 ',
-                         storage_account_info)
+    #    self.storage_cmd('storage metrics update --services f --api true --hour true --minute true --retention 1 ',
+    #                     storage_account_info)
 
-        self.storage_cmd('storage metrics show', storage_account_info).assert_with_checks(
-            JMESPathCheck('file.hour.enabled', True),
-            JMESPathCheck('file.minute.enabled', True))
+    #    self.storage_cmd('storage metrics show', storage_account_info).assert_with_checks(
+    #        JMESPathCheck('file.hour.enabled', True),
+    #        JMESPathCheck('file.minute.enabled', True))
 
     @AllowLargeResponse()
     @ResourceGroupPreparer()
@@ -226,7 +226,7 @@ class StorageAccountTests(StorageScenarioMixin, ScenarioTest):
 
     def test_list_locations(self):
         self.cmd('az account list-locations',
-                 checks=[JMESPathCheck("[?name=='westus'].displayName | [0]", 'West US')])
+                 checks=[JMESPathCheck("[?name=='redmond'].displayName | [0]", 'redmond')])
 
     @ResourceGroupPreparer()
     @StorageAccountPreparer()

@@ -50,7 +50,7 @@ class NoTrafficRecordingPreparer(AbstractPreparer):
 class ResourceGroupPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
     def __init__(self, name_prefix='clitest.rg',
                  parameter_name='resource_group',
-                 parameter_name_for_location='resource_group_location', location='westus',
+                 parameter_name_for_location='resource_group_location', location='redmond',
                  dev_setting_name='AZURE_CLI_TEST_DEV_RESOURCE_GROUP_NAME',
                  dev_setting_location='AZURE_CLI_TEST_DEV_RESOURCE_GROUP_LOCATION',
                  random_name_length=75, key='rg'):
@@ -91,7 +91,7 @@ class ResourceGroupPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
 
 # pylint: disable=too-many-instance-attributes
 class StorageAccountPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
-    def __init__(self, name_prefix='clitest', sku='Standard_LRS', location='westus', kind='Storage', hns=False,
+    def __init__(self, name_prefix='clitest', sku='Standard_LRS', location='redmond', kind='Storage', hns=False,
                  parameter_name='storage_account', resource_group_parameter_name='resource_group', skip_delete=True,
                  dev_setting_name='AZURE_CLI_TEST_DEV_STORAGE_ACCOUNT_NAME', key='sa'):
         super(StorageAccountPreparer, self).__init__(name_prefix, 24)
@@ -147,7 +147,7 @@ class StorageAccountPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
 
 # pylint: disable=too-many-instance-attributes
 class KeyVaultPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
-    def __init__(self, name_prefix='clitest', sku='standard', location='westus', parameter_name='key_vault',
+    def __init__(self, name_prefix='clitest', sku='standard', location='redmond', parameter_name='key_vault',
                  resource_group_parameter_name='resource_group', skip_delete=True,
                  dev_setting_name='AZURE_CLI_TEST_DEV_KEY_VAULT_NAME', key='kv'):
         super(KeyVaultPreparer, self).__init__(name_prefix, 24)
@@ -266,7 +266,7 @@ class ManagedApplicationPreparer(AbstractPreparer, SingleValueReplacer):
 
 # pylint: disable=too-many-instance-attributes
 class VirtualNetworkPreparer(NoTrafficRecordingPreparer, SingleValueReplacer):
-    def __init__(self, name_prefix='clitest.vn', location='westus',
+    def __init__(self, name_prefix='clitest.vn', location='redmond',
                  parameter_name='virtual_network',
                  resource_group_parameter_name='resource_group',
                  resource_group_key=KEY_RESOURCE_GROUP,

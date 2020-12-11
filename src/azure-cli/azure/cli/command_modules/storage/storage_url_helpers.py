@@ -32,8 +32,12 @@ class StorageResourceIdentifier:
         if url.path is None:
             return
 
-        self.account_name, type_name = url.netloc[:0 - len(cloud.suffixes.storage_endpoint) - 1]\
-            .split('.', 2)
+        #with open("output.txt","w") as f:
+        #    f.write(str(url.netloc[:-1]))
+        #    f.write(len(cloud.suffixes.storage_endpoint))
+
+
+        self.account_name, type_name = url.netloc[:-1].split('.')[:2]
 
         if type_name == 'blob':
             self.container, self.blob = self._separate_path_l(url.path)

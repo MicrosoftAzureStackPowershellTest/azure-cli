@@ -13,36 +13,47 @@ interactions:
       ParameterSetName:
       - -g -n
       User-Agent:
-      - python/3.8.5 (Windows-10-10.0.19041-SP0) msrest/0.6.18 msrest_azure/0.6.3
-        azure-mgmt-storage/11.1.0 Azure-SDK-For-Python AZURECLI/2.11.1
-      accept-language:
-      - en-US
+      - AZURECLI/2.16.0 azsdk-python-azure-mgmt-storage/16.0.0 Python/3.7.9 (Windows-10-10.0.17763-SP0)
     method: GET
-    uri: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/clitest000002?api-version=2019-06-01
+    uri: https://adminmanagement.redmond.ext-n26r2105.masd.stbtest.microsoft.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/clitest000002?api-version=2019-06-01
   response:
     body:
-      string: '{"sku":{"name":"Standard_LRS","tier":"Standard"},"kind":"Storage","id":"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/clitest000002","name":"clitest000002","type":"Microsoft.Storage/storageAccounts","location":"westus","tags":{},"properties":{"privateEndpointConnections":[],"networkAcls":{"bypass":"AzureServices","virtualNetworkRules":[],"ipRules":[],"defaultAction":"Allow"},"supportsHttpsTrafficOnly":true,"encryption":{"services":{"file":{"keyType":"Account","enabled":true,"lastEnabledTime":"2020-09-29T05:53:16.1030394Z"},"blob":{"keyType":"Account","enabled":true,"lastEnabledTime":"2020-09-29T05:53:16.1030394Z"}},"keySource":"Microsoft.Storage"},"provisioningState":"Succeeded","creationTime":"2020-09-29T05:53:16.0093009Z","primaryEndpoints":{"blob":"https://clitest000002.blob.core.windows.net/","queue":"https://clitest000002.queue.core.windows.net/","table":"https://clitest000002.table.core.windows.net/","file":"https://clitest000002.file.core.windows.net/"},"primaryLocation":"westus","statusOfPrimary":"available"}}'
+      string: "{\r\n  \"sku\": {\r\n    \"name\": \"Standard_LRS\",\r\n    \"tier\":
+        \"Standard\"\r\n  },\r\n  \"kind\": \"Storage\",\r\n  \"name\": \"clitest000002\",\r\n
+        \ \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageaccounts/clitest000002\",\r\n
+        \ \"type\": \"Microsoft.Storage/storageAccounts\",\r\n  \"location\": \"redmond\",\r\n
+        \ \"properties\": {\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"primaryEndpoints\":
+        {\r\n      \"blob\": \"https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/\",\r\n
+        \     \"queue\": \"https://clitest000002.queue.redmond.ext-n26r2105.masd.stbtest.microsoft.com/\",\r\n
+        \     \"table\": \"https://clitest000002.table.redmond.ext-n26r2105.masd.stbtest.microsoft.com/\"\r\n
+        \   },\r\n    \"primaryLocation\": \"redmond\",\r\n    \"statusOfPrimary\":
+        \"Available\",\r\n    \"encryption\": {\r\n      \"services\": {\r\n        \"blob\":
+        {\r\n          \"enabled\": true,\r\n          \"lastEnabledTime\": \"2020-12-09T03:28:22.5559119Z\"\r\n
+        \       },\r\n        \"table\": {\r\n          \"enabled\": true,\r\n          \"lastEnabledTime\":
+        \"2020-12-09T03:28:22.5559119Z\"\r\n        },\r\n        \"queue\": {\r\n
+        \         \"enabled\": true,\r\n          \"lastEnabledTime\": \"2020-12-09T03:28:22.5559119Z\"\r\n
+        \       }\r\n      },\r\n      \"keySource\": \"Microsoft.Storage\"\r\n    },\r\n
+        \   \"supportsHttpsTrafficOnly\": true,\r\n    \"creationTime\": \"2020-12-09T03:28:22.5559119Z\"\r\n
+        \ }\r\n}"
     headers:
       cache-control:
       - no-cache
       content-length:
-      - '1240'
+      - '1474'
       content-type:
       - application/json
       date:
-      - Tue, 29 Sep 2020 05:53:35 GMT
+      - Wed, 09 Dec 2020 03:28:23 GMT
       expires:
       - '-1'
       pragma:
       - no-cache
       server:
-      - Microsoft-Azure-Storage-Resource-Provider/1.0,Microsoft-HTTPAPI/2.0 Microsoft-HTTPAPI/2.0
+      - Microsoft-HTTPAPI/2.0
       strict-transport-security:
       - max-age=31536000; includeSubDomains
-      transfer-encoding:
-      - chunked
-      vary:
-      - Accept-Encoding
+      www-authenticate:
+      - oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvuk9tpjA7TwErWxfK18T4Xps6nUrj1yZ43wtcb4Rle0Ds+gE60Rf1bupuTNIGhlscvyxVNS+4hFXjQ6BZgWv5P+stU1hTr6ash2wLNWyJxmS3jgC+HXFH6Vvubh5XSUQwN+o6K0Nm2LluBTop4DPG
       x-content-type-options:
       - nosniff
     status:
@@ -62,12 +73,9 @@ interactions:
       ParameterSetName:
       - -g -n
       User-Agent:
-      - python/3.8.5 (Windows-10-10.0.19041-SP0) msrest/0.6.18 msrest_azure/0.6.3
-        azure-mgmt-storage/11.1.0 Azure-SDK-For-Python AZURECLI/2.11.1
-      accept-language:
-      - en-US
+      - AZURECLI/2.16.0 azsdk-python-azure-mgmt-storage/16.0.0 Python/3.7.9 (Windows-10-10.0.17763-SP0)
     method: GET
-    uri: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/fake_group/providers/Microsoft.Storage/storageAccounts/clitest000002?api-version=2019-06-01
+    uri: https://adminmanagement.redmond.ext-n26r2105.masd.stbtest.microsoft.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/fake_group/providers/Microsoft.Storage/storageAccounts/clitest000002?api-version=2019-06-01
   response:
     body:
       string: '{"error":{"code":"ResourceGroupNotFound","message":"Resource group
@@ -80,7 +88,7 @@ interactions:
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 29 Sep 2020 05:53:35 GMT
+      - Wed, 09 Dec 2020 03:28:23 GMT
       expires:
       - '-1'
       pragma:
@@ -108,15 +116,12 @@ interactions:
       ParameterSetName:
       - -g -n
       User-Agent:
-      - python/3.8.5 (Windows-10-10.0.19041-SP0) msrest/0.6.18 msrest_azure/0.6.3
-        azure-mgmt-storage/11.1.0 Azure-SDK-For-Python AZURECLI/2.11.1
-      accept-language:
-      - en-US
+      - AZURECLI/2.16.0 azsdk-python-azure-mgmt-storage/16.0.0 Python/3.7.9 (Windows-10-10.0.17763-SP0)
     method: GET
-    uri: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/fake_account?api-version=2019-06-01
+    uri: https://adminmanagement.redmond.ext-n26r2105.masd.stbtest.microsoft.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/fake_account?api-version=2019-06-01
   response:
     body:
-      string: '{"error":{"code":"ResourceNotFound","message":"The Resource ''Microsoft.Storage/storageAccounts/fake_account''
+      string: '{"error":{"code":"ResourceNotFound","message":"The Resource ''Microsoft.Storage/storageaccounts/fake_account''
         under resource group ''clitest.rg000001'' was not found. For more details
         please go to https://aka.ms/ARMResourceNotFoundFix"}}'
     headers:
@@ -127,7 +132,7 @@ interactions:
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 29 Sep 2020 05:53:36 GMT
+      - Wed, 09 Dec 2020 03:28:23 GMT
       expires:
       - '-1'
       pragma:

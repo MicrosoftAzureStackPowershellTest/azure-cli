@@ -15,40 +15,38 @@ interactions:
       ParameterSetName:
       - -n -g --query -o
       User-Agent:
-      - python/3.8.5 (Windows-10-10.0.19041-SP0) msrest/0.6.18 msrest_azure/0.6.3
-        azure-mgmt-storage/11.1.0 Azure-SDK-For-Python AZURECLI/2.11.1
-      accept-language:
-      - en-US
+      - AZURECLI/2.16.0 azsdk-python-azure-mgmt-storage/16.0.0 Python/3.7.9 (Windows-10-10.0.17763-SP0)
     method: POST
-    uri: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/clitest000002/listKeys?api-version=2019-06-01&$expand=kerb
+    uri: https://adminmanagement.redmond.ext-n26r2105.masd.stbtest.microsoft.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/clitest000002/listKeys?api-version=2019-06-01&$expand=kerb
   response:
     body:
-      string: '{"keys":[{"keyName":"key1","value":"veryFakedStorageAccountKey==","permissions":"FULL"},{"keyName":"key2","value":"veryFakedStorageAccountKey==","permissions":"FULL"}]}'
+      string: "{\r\n  \"keys\": [\r\n    {\r\n      \"keyName\": \"key1\",\r\n      \"value\":
+        \"veryFakedStorageAccountKey==\",\r\n      \"permissions\": \"Full\"\r\n    },\r\n
+        \   {\r\n      \"keyName\": \"key2\",\r\n      \"value\": \"veryFakedStorageAccountKey==\",\r\n
+        \     \"permissions\": \"Full\"\r\n    }\r\n  ]\r\n}"
     headers:
       cache-control:
       - no-cache
       content-length:
-      - '288'
+      - '377'
       content-type:
       - application/json
       date:
-      - Tue, 29 Sep 2020 05:53:57 GMT
+      - Wed, 09 Dec 2020 03:28:27 GMT
       expires:
       - '-1'
       pragma:
       - no-cache
       server:
-      - Microsoft-Azure-Storage-Resource-Provider/1.0,Microsoft-HTTPAPI/2.0 Microsoft-HTTPAPI/2.0
+      - Microsoft-HTTPAPI/2.0
       strict-transport-security:
       - max-age=31536000; includeSubDomains
-      transfer-encoding:
-      - chunked
-      vary:
-      - Accept-Encoding
+      www-authenticate:
+      - oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvgeHjlv74hK9Hu3dwKMMyVFn8mj/UKLvTdvnGB/+OA/YvndnTxek1L3M2X4ElcOrK55LXocGs+KLJZlM6OdJek++AWdUyzu9+sGO6kmoyHM2hjB83gBj5xkRJcsgMLc9M4hFExFn+ONzg1m5mHz8S
       x-content-type-options:
       - nosniff
-      x-ms-ratelimit-remaining-subscription-resource-requests:
-      - '11997'
+      x-ms-ratelimit-remaining-subscription-writes:
+      - '1057'
     status:
       code: 200
       message: OK
@@ -60,27 +58,27 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:53:57 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:53:58 GMT
+      - Wed, 09 Dec 2020 03:28:27 GMT
       etag:
-      - '"0x8D8643C0F507E0C"'
+      - '"0x8D89BF27EB25EB6"'
       last-modified:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -92,27 +90,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:53:58 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:53:58 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C0F507E0C"'
+      - '"0x8D89BF27EB25EB6"'
       last-modified:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -132,13 +130,13 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=acl
   response:
     body:
       string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers
@@ -147,11 +145,11 @@ interactions:
       content-type:
       - application/xml
       date:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C0F507E0C"'
+      - '"0x8D89BF27EB25EB6"'
       last-modified:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
       transfer-encoding:
@@ -171,29 +169,29 @@ interactions:
       Content-Length:
       - '60'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-blob-public-access:
       - blob
       x-ms-date:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=acl
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:27 GMT
       etag:
-      - '"0x8D8643C0FED3167"'
+      - '"0x8D89BF27EDEC6DC"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -205,13 +203,13 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:53:59 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=acl
   response:
     body:
       string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers
@@ -220,54 +218,15 @@ interactions:
       content-type:
       - application/xml
       date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C0FED3167"'
+      - '"0x8D89BF27EB25EB6"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
       transfer-encoding:
       - chunked
-      x-ms-blob-public-access:
-      - blob
-      x-ms-version:
-      - '2018-11-09'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - keep-alive
-      User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
-      x-ms-date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
-      x-ms-version:
-      - '2018-11-09'
-    method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
-  response:
-    body:
-      string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers
-        />"
-    headers:
-      content-type:
-      - application/xml
-      date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
-      etag:
-      - '"0x8D8643C0FED3167"'
-      last-modified:
-      - Tue, 29 Sep 2020 05:54:00 GMT
-      server:
-      - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
-      transfer-encoding:
-      - chunked
-      x-ms-blob-public-access:
-      - blob
       x-ms-version:
       - '2018-11-09'
     status:
@@ -283,58 +242,23 @@ interactions:
       Content-Length:
       - '60'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=acl
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C107E8F31"'
+      - '"0x8D89BF27EF906F4"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:01 GMT
-      server:
-      - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
-      x-ms-version:
-      - '2018-11-09'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - keep-alive
-      User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
-      x-ms-date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
-      x-ms-version:
-      - '2018-11-09'
-    method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=acl
-  response:
-    body:
-      string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers
-        />"
-    headers:
-      content-type:
-      - application/xml
-      date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
-      etag:
-      - '"0x8D8643C107E8F31"'
-      last-modified:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
       transfer-encoding:
@@ -350,27 +274,62 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:00 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=acl
+  response:
+    body:
+      string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><SignedIdentifiers
+        />"
+    headers:
+      content-type:
+      - application/xml
+      date:
+      - Wed, 09 Dec 2020 03:28:28 GMT
+      etag:
+      - '"0x8D89BF27EF906F4"'
+      last-modified:
+      - Wed, 09 Dec 2020 03:28:28 GMT
+      server:
+      - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
+      x-ms-version:
+      - '2018-11-09'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
+      x-ms-date:
+      - Wed, 09 Dec 2020 03:28:28 GMT
+      x-ms-version:
+      - '2018-11-09'
+    method: GET
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C107E8F31"'
+      - '"0x8D89BF27EF906F4"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -390,24 +349,24 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/?comp=list&maxresults=5000
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/?comp=list&maxresults=5000
   response:
     body:
       string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><EnumerationResults
-        ServiceEndpoint=\"https://clitest000002.blob.core.windows.net/\"><MaxResults>5000</MaxResults><Containers><Container><Name>cont000003</Name><Properties><Last-Modified>Tue,
-        29 Sep 2020 05:54:01 GMT</Last-Modified><Etag>\"0x8D8643C107E8F31\"</Etag><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState><HasImmutabilityPolicy>false</HasImmutabilityPolicy><HasLegalHold>false</HasLegalHold></Properties></Container></Containers><NextMarker
+        ServiceEndpoint=\"https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/\"><MaxResults>5000</MaxResults><Containers><Container><Name>cont000003</Name><Properties><Last-Modified>Wed,
+        09 Dec 2020 03:28:28 GMT</Last-Modified><Etag>\"0x8D89BF27EF906F4\"</Etag><LeaseStatus>unlocked</LeaseStatus><LeaseState>available</LeaseState><HasImmutabilityPolicy>false</HasImmutabilityPolicy><HasLegalHold>false</HasLegalHold></Properties></Container></Containers><NextMarker
         /></EnumerationResults>"
     headers:
       content-type:
       - application/xml
       date:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
       transfer-encoding:
@@ -425,9 +384,9 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:01 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-meta-foo:
       - bar
       x-ms-meta-moo:
@@ -435,21 +394,21 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=metadata
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=metadata
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:02 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C11701FBF"'
+      - '"0x8D89BF27F43A577"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:02 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -461,27 +420,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:02 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=metadata
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=metadata
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:28 GMT
       etag:
-      - '"0x8D8643C11701FBF"'
+      - '"0x8D89BF27F43A577"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:02 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-meta-foo:
       - bar
       x-ms-meta-moo:
@@ -499,27 +458,27 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:02 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=metadata
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=metadata
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -531,27 +490,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=metadata
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=metadata
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -567,9 +526,9 @@ interactions:
       If-Modified-Since:
       - Fri, 01 Apr 2016 12:00:00 GMT
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-lease-action:
       - acquire
       x-ms-lease-duration:
@@ -579,21 +538,21 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=lease
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=lease
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:04 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-lease-id:
       - abcdabcd-abcd-abcd-abcd-abcdabcdabcd
       x-ms-version:
@@ -607,27 +566,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:04 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:04 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -651,9 +610,9 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:04 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-lease-action:
       - change
       x-ms-lease-id:
@@ -663,21 +622,21 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=lease
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=lease
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-lease-id:
       - dcbadcba-dcba-dcba-dcba-dcbadcbadcba
       x-ms-version:
@@ -693,9 +652,9 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:04 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       x-ms-lease-action:
       - renew
       x-ms-lease-id:
@@ -703,21 +662,21 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=lease
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=lease
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-lease-id:
       - dcbadcba-dcba-dcba-dcba-dcbadcbadcba
       x-ms-version:
@@ -731,27 +690,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -775,9 +734,9 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-lease-action:
       - break
       x-ms-lease-break-period:
@@ -785,23 +744,23 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=lease
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=lease
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-lease-time:
-      - '30'
+      - '29'
       x-ms-version:
       - '2018-11-09'
     status:
@@ -813,27 +772,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:06 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -855,9 +814,9 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:06 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-lease-action:
       - release
       x-ms-lease-id:
@@ -865,21 +824,21 @@ interactions:
       x-ms-version:
       - '2018-11-09'
     method: PUT
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container&comp=lease
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container&comp=lease
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:05 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -891,27 +850,27 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:06 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:06 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       etag:
-      - '"0x8D8643C121F9246"'
+      - '"0x8D89BF27F66BE89"'
       last-modified:
-      - Tue, 29 Sep 2020 05:54:03 GMT
+      - Wed, 09 Dec 2020 03:28:29 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-has-immutability-policy:
       - 'false'
       x-ms-has-legal-hold:
@@ -933,23 +892,23 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:07 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-version:
       - '2018-11-09'
     method: DELETE
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: ''
     headers:
-      content-length:
-      - '0'
       date:
-      - Tue, 29 Sep 2020 05:54:06 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      transfer-encoding:
+      - chunked
       x-ms-version:
       - '2018-11-09'
     status:
@@ -961,24 +920,24 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.8.5; Windows 10) AZURECLI/2.11.1
+      - Azure-Storage/2.0.0-2.0.1 (Python CPython 3.7.9; Windows 10) AZURECLI/2.16.0
       x-ms-date:
-      - Tue, 29 Sep 2020 05:54:07 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       x-ms-version:
       - '2018-11-09'
     method: GET
-    uri: https://clitest000002.blob.core.windows.net/cont000003?restype=container
+    uri: https://clitest000002.blob.redmond.ext-n26r2105.masd.stbtest.microsoft.com/cont000003?restype=container
   response:
     body:
       string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>ContainerNotFound</Code><Message>The
-        specified container does not exist.\nRequestId:77a1e868-801e-0002-4c24-96b228000000\nTime:2020-09-29T05:54:08.2336477Z</Message></Error>"
+        specified container does not exist.\nRequestId:034d321c-ede4-07e4-69a4-3205ace0b5a0\nTime:2020-12-09T03:28:31.0231503Z</Message></Error>"
     headers:
       content-length:
       - '225'
       content-type:
       - application/xml
       date:
-      - Tue, 29 Sep 2020 05:54:07 GMT
+      - Wed, 09 Dec 2020 03:28:30 GMT
       server:
       - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
       x-ms-error-code:

@@ -11,13 +11,13 @@ from ..storage_test_util import StorageScenarioMixin
 
 @api_version_constraint(ResourceType.MGMT_STORAGE, min_api='2016-12-01')
 class StorageAccessControlListTests(StorageScenarioMixin, ScenarioTest):
-    @ResourceGroupPreparer()
-    @StorageAccountPreparer()
-    def test_storage_container_acl_scenarios(self, resource_group, storage_account):
-        account_info = self.get_account_info(resource_group, storage_account)
-        container = self.create_container(account_info)
+    #@ResourceGroupPreparer()
+    #@StorageAccountPreparer()
+    #def test_storage_container_acl_scenarios(self, resource_group, storage_account):
+    #    account_info = self.get_account_info(resource_group, storage_account)
+    #    container = self.create_container(account_info)
 
-        self._verify_access_control_list(account_info, 'container', container)
+    #    self._verify_access_control_list(account_info, 'container', container)
 
     # @ResourceGroupPreparer()
     # @StorageAccountPreparer()
@@ -43,7 +43,7 @@ class StorageAccessControlListTests(StorageScenarioMixin, ScenarioTest):
 
         acl = self.storage_cmd('storage {} policy list {}', account_info, service_type,
                                container_id_parameter).get_output_in_json().keys()
-
+        print(set(acl), set(['test1', 'test2', 'test3', 'test4']))
         self.assertSetEqual(set(acl), set(['test1', 'test2', 'test3', 'test4']))
 
         self.storage_cmd('storage {} policy show {} -n test1', account_info, service_type,

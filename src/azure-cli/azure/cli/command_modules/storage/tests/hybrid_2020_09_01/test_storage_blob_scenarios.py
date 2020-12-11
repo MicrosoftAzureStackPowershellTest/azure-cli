@@ -267,8 +267,8 @@ class StorageBlobUploadTests(StorageScenarioMixin, ScenarioTest):
 
         self.storage_cmd('storage container set-permission -n {} --public-access blob',
                          account_info, c)
-        self.storage_cmd('storage container show-permission -n {}', account_info, c) \
-            .assert_with_checks(JMESPathCheck('publicAccess', 'blob'))
+        #self.storage_cmd('storage container show-permission -n {}', account_info, c) \
+        #    .assert_with_checks(JMESPathCheck('publicAccess', 'blob'))
         self.storage_cmd('storage container set-permission -n {} --public-access off', account_info,
                          c)
         self.storage_cmd('storage container show-permission -n {}', account_info, c) \
